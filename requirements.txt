@@ -2,9 +2,11 @@ streamlit==1.38.0
 pandas
 numpy
 python-dateutil
-langchain
+langchain==0.1.17
 langchain-groq
 langchain-community
 crewai
 huggingface-hub
 chromadb
+
+
