@@ -238,6 +238,32 @@ Magnetic AI:         User Query → Context Attraction → Adaptive Response →
 
 - Each order includes timeline tracking (visual step completion)
 
+
+###  Complete E-Commerce System
+Shopping Cart
+
+Add ingredients/equipment from recipes
+Quantity management
+Real-time price calculation
+Item removal/editing
+
+Payment Gateway (8 Methods)
+
+Credit/Debit Cards (with OTP verification)
+Wallet (instant payment)
+Gift Cards
+PayPal
+Google Pay
+PhonePe
+UPI
+Cash on Delivery
+
+Order Management
+pythonOrder Lifecycle:
+1. Order Placed → 2. Payment Confirmed → 3. Preparing Order 
+→ 4. Out for Delivery → 5. Delivered
+
+
 ### 6️⃣ **Return & Replacement Module**
 
 - Allows user to initiate:
@@ -251,7 +277,7 @@ Magnetic AI:         User Query → Context Attraction → Adaptive Response →
 - Simulated API response generation for status updates
 
 
-### 7️⃣ **Voice Interaction**
+### 7️⃣ **Voice Interaction(coming soon)**
 
 - Text-to-speech response rendering
 
