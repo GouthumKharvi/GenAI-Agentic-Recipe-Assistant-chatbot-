@@ -52,6 +52,24 @@ In this project, multiple specialized agents—powered by **CrewAI** and **LangC
 It uses **Retrieval-Augmented Generation (RAG)**  to dynamically fetch relevant data (recipes, ingredients, transactions, preferences) from a Chroma vector database, ensuring responses are factual and contextually grounded.
 
 Unlike static chatbots, this Agentic GenAI system adapts to user behavior, learns preferences over time, and intelligently coordinates multiple tasks—making it an autonomous, context-aware, and self-improving AI assistant.
+
+ðŸŽ¯ Project Overview
+Vision Statement
+Transform cooking assistance through Generative AI by creating an intelligent, context-aware chatbot that not only suggests recipes but also manages the entire cooking journey—from ingredient selection to order tracking and returns.
+What Problem Does It Solve?
+
+Information Overload: Users struggle to find personalized recipes from 231K+ recipe databases
+Shopping Friction: Disconnected experience between recipe discovery and ingredient purchase
+Post-Purchase Support: No integrated return/replacement system in cooking assistants
+Context Loss: Traditional chatbots lack memory and personalization
+
+Solution Approach
+Agentic AI Chatbot that:
+
+Attracts relevant context using vector similarity search (ChromaDB)
+Adapts responses based on user preferences and history
+Acts autonomously through CrewAI multi-agent orchestration
+Assists throughout the entire customer journey
 ---
 
 
