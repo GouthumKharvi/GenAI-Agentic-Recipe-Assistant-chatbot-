@@ -350,6 +350,21 @@ pythonOrder Lifecycle:
 
 | **Conversation Memory** | LangChain Buffer Memory |
 
+
+## Data Processing
+
+pythonPandas         # DataFrame operations
+
+NumPy          # Numerical computations
+
+AST            # Safe literal evaluation
+
+JSON           # Data serialization
+
+UUID           # Unique ID generation
+
+DateTime       # Timestamp management
+
 ---
 
 
