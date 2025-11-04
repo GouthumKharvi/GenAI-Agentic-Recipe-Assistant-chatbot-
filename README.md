@@ -511,123 +511,88 @@ This flexibility enables experimentation with multiple LLM backends in one inter
 
 ## 🎨 UI Highlights (for GitHub Preview)
 
-*(Add screenshots here later)*
+
 
 ```text
 📸 Suggested images:
-- Chatbot Interface
+- 1.Chatbot Interface
 ```
 <img width="1919" height="950" alt="1 Chatbot-Interface" src="https://github.com/user-attachments/assets/41fd0aa3-32d8-45c9-b243-f28ecab5fc19" />
 
 ```
 
-- Recipe Recommendation Screen
+- 2.Recipe Recommendation Screen
 ```
-┌─────────────────────────────────────────────────────┐
-│  🔍 Found 231 Recipes for "chicken curry"          │
-│  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  │
-│                                                       │
-│  🍳 Chicken Tikka Masala                            │
-│  ├─ 🥘 Ingredients (10)                             │
-│  ├─ ⏱️ Cook Time: 45 mins                           │
-│  ├─ 💰 Est. Cost: $15.50                            │
-│  └─ ➕ Add to Cart                                  │
-│                                                       │
-│  🍳 Butter Chicken                                   │
-│  └─ [Similar layout]                                 │
-└─────────────────────────────────────────────────────┘
+<img width="1919" height="949" alt="2 Recipies-Recomendation-Screen" src="https://github.com/user-attachments/assets/8e8c83f9-d19e-4027-b847-dc23ee59876f" />
+
 ```
 
-### 3. Shopping Cart
+### 3. Equipment Expert Screen 
 ```
-┌─────────────────────────────────────────────────────┐
-│  🛒 Shopping Cart (5 items)                         │
-│  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  │
-│                                                       │
-│  🍗 Chicken Breast     $12.99  x2   [$25.98]  🗑️   │
-│  🌶️ Red Bell Pepper   $5.49   x3   [$16.47]  🗑️   │
-│  🍚 Basmati Rice       $6.99   x1   [$6.99]   🗑️   │
-│  🧄 Garlic             $3.49   x1   [$3.49]   🗑️   │
-│  🧅 Onion              $2.49   x2   [$4.98]   🗑️   │
-│                                      ━━━━━━━━━━━━━   │
-│                          Subtotal:   $57.91         │
-│                          Tax (5%):   $2.90          │
-│                          ━━━━━━━━━━━━━━━━━━━━━━━━━  │
-│                          Total:      $60.81         │
-│                                                       │
-│  [🛍️ Proceed to Checkout]                          │
-└─────────────────────────────────────────────────────┘
+<img width="1914" height="949" alt="3 Equipment-Expert screen" src="https://github.com/user-attachments/assets/80447ebd-380a-40b5-b0ce-ddd6f718cb06" />
+
 ```
 
-### 4. Payment Gateway
-```
-┌─────────────────────────────────────────────────────┐
-│  💳 Payment & Checkout                              │
-│  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  │
-│                                                       │
-│  👤 Customer Details                                │
-│  Name:    [Gouthum Kharvi        ]                 │
-│  Email:   [gouthum@example.com   ]                 │
-│  Phone:   [+91 9876543210        ]                 │
-│  Address: [123 Main St           ]                 │
-│                                                       │
-│  💳 Payment Method                                  │
-│  [💳 Credit Card] [🦠Debit Card] [💼 PayPal]      │
-│  [📱 Google Pay]  [📲 PhonePe]   [💵 COD]         │
-│  [💛 Wallet]      [🎁 Gift Card]                   │
-│                                                       │
-│  [💰 Pay $60.81]                                    │
-└─────────────────────────────────────────────────────┘
+### 4. Nutritionist Agent Screen
 ```
 
-### 5. Order Tracking
-```
-┌─────────────────────────────────────────────────────┐
-│  📦 Order #ORD-1001                                 │
-│  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  │
-│                                                       │
-│  ✅ Order Placed        Nov 5, 2025 10:30 AM       │
-│  ✅ Payment Confirmed   Nov 5, 2025 10:31 AM       │
-│  ✅ Preparing Order     Nov 5, 2025 11:00 AM       │
-│  ⏳ Out for Delivery    Pending                     │
-│  ⏳ Delivered           Pending                     │
-│                                                       │
-│  📍 Delivery Address                                │
-│  Gouthum Kharvi                                     │
-│  123 Main St, Udupi, Karnataka 574630              │
-│                                                       │
-│  [📄 Download Invoice] [📞 Contact Support]        │
-└─────────────────────────────────────────────────────┘
+<img width="1919" height="937" alt="4 Nutritionist-Agent_screen" src="https://github.com/user-attachments/assets/06cd1a3f-6b45-4883-9429-f859b05bd1f1" />
+
 ```
 
-### 6. Analytics Dashboard
+### 5. Meal Planner Agent Screen
 ```
-┌─────────────────────────────────────────────────────┐
-│  📊 Analytics Dashboard                             │
-│  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  │
-│                                                       │
-│  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌────────┐│
-│  │ 💬 Total │ │ ⭐ Fav   │ │ 🏆 Achiv │ │ 🍳 Rec ││
-│  │  Chats   │ │  Recipes │ │  ements  │ │  ipes  ││
-│  │   47     │ │    12    │ │    8     │ │ 231K+  ││
-│  └──────────┘ └──────────┘ └──────────┘ └────────┘│
-│                                                       │
-│  🏆 Your Achievements                               │
-│  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  │
-│  ✅ 🆠First Chat                                   │
-│  ✅ 💬 Chatty Chef (5+ messages)                   │
-│  ✅ 🔥 Cooking Enthusiast (10+ messages)           │
-│  ✅ ⭠First Favorite                               │
-│  ✅ 🛒 First Purchase                              │
-│                                                       │
-│  🔒 Locked Achievements                             │
-│  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  │
-│  🔒 👑 Master Chef (Send 50 messages) - 47/50      │
-│  🔒 📚 Recipe Master (Save 20 favorites) - 12/20   │
-└─────────────────────────────────────────────────────┘
+<img width="1919" height="949" alt="5 Meal-Planner-Agent-Screen" src="https://github.com/user-attachments/assets/95bb4c83-70f7-45c5-9518-94c10a26c14d" />
+
 ```
 
+### 6. Shopping Assistnat Agent Screen
+```
+img width="1919" height="932" alt="6 Sopping-Assistant-Agent-Screen" src="https://github.com/user-attachments/assets/4c63d3cc-b84b-4a82-a5aa-286c6980b779" />
+
+```
+
+### 7. Analytics Dashboard Screen
+```
+
+<img width="1916" height="945" alt="7 Analytics-Dashboard-Screen" src="https://github.com/user-attachments/assets/b589b7db-3600-4608-8315-0a824012e267" />
+
+```
+### 8. Profile Page  Screen
+```
+
+<img width="1919" height="933" alt="8 Profile-Page-Screen" src="https://github.com/user-attachments/assets/71b44c6d-e955-4c4d-80ae-dfc1b8c68ace" />
+
+```
+
+### 9. Shopping Cart Screen
+```
+<img width="1530" height="376" alt="9 shopping-cart-page" src="https://github.com/user-attachments/assets/031ee777-d91b-41af-8ffe-4534641b29bd" />
+
+```
+
+### 10. Paymnet and Checkout Page 
+```
+
+<img width="1638" height="763" alt="10 Payment Checkout-Page" src="https://github.com/user-attachments/assets/1bb600fc-9d63-45b7-85da-8848ecac71d9" />
+
+```
+### 11. Return and Replacment  Page 
+```
+<img width="1649" height="855" alt="11 Return and Replacemnet-Page" src="https://github.com/user-attachments/assets/63699e4e-fd2c-42de-9ad5-615f4a024e7c" />
+
+```
+
+### 12. wallet   Page 
+```
+<img width="273" height="774" alt="12 Wallet page " src="https://github.com/user-attachments/assets/5795ae4b-a828-471d-8468-c1ad6b2f9b9a" />
+
+
+```
 ---
+
+
+
 
 ## 🧩 Future Enhancements
 
