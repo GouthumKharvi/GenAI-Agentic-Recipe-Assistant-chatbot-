@@ -420,13 +420,37 @@ streamlit run alternative_update_streamlit16.py
 ## 🧱 Directory Structure
 
 ```
+streamlit run alternative_update_streamlit16.py
+```
+
+**Expected Output:**
+```
+You can now view your Streamlit app in your browser.
+Local URL: http://localhost:8501
+Network URL: http://192.168.x.x:8501
+```
+
+---
+
+##  Project Structure
+```
 AI-Recipe-Assistant/
 │
-├── cookingrecipies.ipynb                # Notebook for prototype logic, data setup, and testing
-├── alternative_update_streamlit16.py    # Streamlit app with full GenAI chatbot system
-├── requirements.txt                     # Dependencies
-├── README.md                            # Project documentation
-└── assets/                              # (Optional) Images, icons, or datasets
+├── alternative_update_streamlit16.py    # Main Streamlit application
+├── cookingrecipies.ipynb                # Jupyter notebook (prototyping)
+├── requirements.txt                     # Python dependencies
+├── README.md                            # This file
+│
+├── recipe_dataset/
+│   └── RAW_recipes.csv                  # 231K+ recipe database
+│
+├── assets/                              # (Optional) Images, logos
+│   ├── logo.png
+│   └── screenshots/
+│
+├── .env                                 # API keys (DO NOT COMMIT)
+├── .gitignore                           # Git ignore rules
+└── LICENSE                              # MIT License
 ```
 
 ---
@@ -492,10 +516,130 @@ This flexibility enables experimentation with multiple LLM backends in one inter
 ```text
 📸 Suggested images:
 - Chatbot Interface
+```
+┌─────────────────────────────────────────────────────┐
+│  🤖 AI Culinary Assistant                           │
+│  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  │
+│                                                       │
+│  👤 You: How to make pasta?                         │
+│  ┌───────────────────────────────────────────────┐  │
+│  │ 🤖 Assistant:                                  │  │
+│  │ Let's cook some delicious pasta together!     │  │
+│  │                                                 │  │
+│  │ Option 1: Making Pasta from Scratch           │  │
+│  │ Ingredients:                                   │  │
+│  │ - 2 cups all-purpose flour                    │  │
+│  │ - 2 large eggs...                             │  │
+│  └───────────────────────────────────────────────┘  │
+│                                                       │
+│  💬 Type your question here...                      │
+└─────────────────────────────────────────────────────┘
+```
+
 - Recipe Recommendation Screen
-- Order Tracking
-- Wallet / Gift Card Page
-- Analytics Dashboard
+```
+┌─────────────────────────────────────────────────────┐
+│  🔍 Found 231 Recipes for "chicken curry"          │
+│  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  │
+│                                                       │
+│  🍳 Chicken Tikka Masala                            │
+│  ├─ 🥘 Ingredients (10)                             │
+│  ├─ ⏱️ Cook Time: 45 mins                           │
+│  ├─ 💰 Est. Cost: $15.50                            │
+│  └─ ➕ Add to Cart                                  │
+│                                                       │
+│  🍳 Butter Chicken                                   │
+│  └─ [Similar layout]                                 │
+└─────────────────────────────────────────────────────┘
+```
+
+### 3. Shopping Cart
+```
+┌─────────────────────────────────────────────────────┐
+│  🛒 Shopping Cart (5 items)                         │
+│  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  │
+│                                                       │
+│  🍗 Chicken Breast     $12.99  x2   [$25.98]  🗑️   │
+│  🌶️ Red Bell Pepper   $5.49   x3   [$16.47]  🗑️   │
+│  🍚 Basmati Rice       $6.99   x1   [$6.99]   🗑️   │
+│  🧄 Garlic             $3.49   x1   [$3.49]   🗑️   │
+│  🧅 Onion              $2.49   x2   [$4.98]   🗑️   │
+│                                      ━━━━━━━━━━━━━   │
+│                          Subtotal:   $57.91         │
+│                          Tax (5%):   $2.90          │
+│                          ━━━━━━━━━━━━━━━━━━━━━━━━━  │
+│                          Total:      $60.81         │
+│                                                       │
+│  [🛍️ Proceed to Checkout]                          │
+└─────────────────────────────────────────────────────┘
+```
+
+### 4. Payment Gateway
+```
+┌─────────────────────────────────────────────────────┐
+│  💳 Payment & Checkout                              │
+│  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  │
+│                                                       │
+│  👤 Customer Details                                │
+│  Name:    [Gouthum Kharvi        ]                 │
+│  Email:   [gouthum@example.com   ]                 │
+│  Phone:   [+91 9876543210        ]                 │
+│  Address: [123 Main St           ]                 │
+│                                                       │
+│  💳 Payment Method                                  │
+│  [💳 Credit Card] [🦠Debit Card] [💼 PayPal]      │
+│  [📱 Google Pay]  [📲 PhonePe]   [💵 COD]         │
+│  [💛 Wallet]      [🎁 Gift Card]                   │
+│                                                       │
+│  [💰 Pay $60.81]                                    │
+└─────────────────────────────────────────────────────┘
+```
+
+### 5. Order Tracking
+```
+┌─────────────────────────────────────────────────────┐
+│  📦 Order #ORD-1001                                 │
+│  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  │
+│                                                       │
+│  ✅ Order Placed        Nov 5, 2025 10:30 AM       │
+│  ✅ Payment Confirmed   Nov 5, 2025 10:31 AM       │
+│  ✅ Preparing Order     Nov 5, 2025 11:00 AM       │
+│  ⏳ Out for Delivery    Pending                     │
+│  ⏳ Delivered           Pending                     │
+│                                                       │
+│  📍 Delivery Address                                │
+│  Gouthum Kharvi                                     │
+│  123 Main St, Udupi, Karnataka 574630              │
+│                                                       │
+│  [📄 Download Invoice] [📞 Contact Support]        │
+└─────────────────────────────────────────────────────┘
+```
+
+### 6. Analytics Dashboard
+```
+┌─────────────────────────────────────────────────────┐
+│  📊 Analytics Dashboard                             │
+│  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  │
+│                                                       │
+│  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌────────┐│
+│  │ 💬 Total │ │ ⭐ Fav   │ │ 🏆 Achiv │ │ 🍳 Rec ││
+│  │  Chats   │ │  Recipes │ │  ements  │ │  ipes  ││
+│  │   47     │ │    12    │ │    8     │ │ 231K+  ││
+│  └──────────┘ └──────────┘ └──────────┘ └────────┘│
+│                                                       │
+│  🏆 Your Achievements                               │
+│  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  │
+│  ✅ 🆠First Chat                                   │
+│  ✅ 💬 Chatty Chef (5+ messages)                   │
+│  ✅ 🔥 Cooking Enthusiast (10+ messages)           │
+│  ✅ ⭠First Favorite                               │
+│  ✅ 🛒 First Purchase                              │
+│                                                       │
+│  🔒 Locked Achievements                             │
+│  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  │
+│  🔒 👑 Master Chef (Send 50 messages) - 47/50      │
+│  🔒 📚 Recipe Master (Save 20 favorites) - 12/20   │
+└─────────────────────────────────────────────────────┘
 ```
 
 ---
@@ -510,6 +654,72 @@ This flexibility enables experimentation with multiple LLM backends in one inter
 
 ---
 
+## 🌍 Deployment Options
+```
+Option 1: Streamlit Cloud (Recommended for Beginners)
+bash1. Push code to GitHub
+2. Go to share.streamlit.io
+3. Connect GitHub repository
+4. Add secrets (API keys) in dashboard
+5. Deploy!
+
+Pros: Free, Easy, Auto-deploys on commit
+Cons: Limited resources, Public URL
+```
+
+Option 2: Heroku
+bash# Create Procfile
+web: sh setup.sh && streamlit run alternative_update_streamlit16.py
+
+# Create setup.sh
+mkdir -p ~/.streamlit/
+echo "[server]
+port = $PORT
+enableCORS = false
+headless = true
+" > ~/.streamlit/config.toml
+
+# Deploy
+heroku create ai-recipe-assistant
+git push heroku main
+
+Pros: Scalable, Custom domain
+Cons: Paid (after free tier), Configuration
+Option 3: AWS EC2
+bash# Launch EC2 instance (t2.medium recommended)
+# Install dependencies
+sudo apt update
+sudo apt install python3-pip
+pip3 install -r requirements.txt
+
+# Run with nohup
+nohup streamlit run app.py --server.port 80 &
+
+# Or use systemd service
+sudo systemctl enable streamlit
+sudo systemctl start streamlit
+
+Pros: Full control, Scalable, Production-ready
+Cons: Manual setup, Cost, Maintenance
+Option 4: Docker
+dockerfile# Dockerfile
+FROM python:3.9-slim
+
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+
+COPY . .
+
+EXPOSE 8501
+CMD ["streamlit", "run", "alternative_update_streamlit16.py"]
+
+# Build and run
+docker build -t ai-recipe-assistant .
+docker run -p 8501:8501 ai-recipe-assistant
+
+Pros: Portable, Consistent, Easy scaling
+Cons: Docker knowledge required
 ## 👨‍💻 Developer Information
 
 **Name:** Gouthum Kharvi
