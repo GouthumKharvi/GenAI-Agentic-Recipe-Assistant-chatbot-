@@ -53,7 +53,7 @@ It uses **Retrieval-Augmented Generation (RAG)**  to dynamically fetch relevant 
 
 Unlike static chatbots, this Agentic GenAI system adapts to user behavior, learns preferences over time, and intelligently coordinates multiple tasks—making it an autonomous, context-aware, and self-improving AI assistant.
 
-ðŸŽ¯ Project Overview
+##  Project Overview
 Vision Statement
 Transform cooking assistance through Generative AI by creating an intelligent, context-aware chatbot that not only suggests recipes but also manages the entire cooking journey—from ingredient selection to order tracking and returns.
 What Problem Does It Solve?
@@ -93,122 +93,244 @@ Assists throughout the entire customer journey
 ## 🏗️ System Architecture
 
 
-           ┌──────────────────────────┐
-           │        User Input        │
-           └─────────────┬────────────┘
-                         │
-                         ▼
-            ┌────────────────────────┐
-            │  LangChain + CrewAI LLM │
-            │  (Groq + HuggingFace)   │
-            └────────────────────────┘
-                         │
-           ┌─────────────┴──────────────┐
-           │ Conversational Retrieval   │
-           │ + Contextual Memory Chain  │
-           └─────────────┬──────────────┘
-                         │
-       ┌──────────────────────────────────────┐
-       │           Application Layer          │
-       │ (Streamlit + ChromaDB + Custom CSS)  │
-       ├──────────────────────────────────────┤
-       │ Chatbot UI | Recipe Gen | Orders |   │
-       │ Wallet | Shopping | Analytics | Voice│
-       └──────────────────────────────────────┘
+          Traditional Chatbot:  User Query → Static Response
+Magnetic AI:         User Query → Context Attraction → Adaptive Response → Intelligent Action
+```
+
+**Three Pillars of Magnetic Intelligence:**
+
+1. **Contextual Magnetism** (RAG with ChromaDB)
+   - Dynamically pulls relevant recipes from 231K+ database
+   - Semantic search using sentence transformers
+   - Vector similarity scoring for precision
+
+2. **Conversational Magnetism** (LangChain Memory)
+   - Retains chat history across sessions
+   - Builds user preference profiles
+   - Context-aware response generation
+
+3. **Action Magnetism** (CrewAI Agents)
+   - Autonomous task orchestration
+   - Multi-agent collaboration (Recipe Chef, Nutritionist, Shopping Assistant)
+   - Self-healing workflow management
+
+---
+
+## 🏗️ System Architecture
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                        User Interface Layer                      │
+│  (Streamlit App with Custom CSS Animations & Responsive Design) │
+└────────────────────────────┬────────────────────────────────────┘
+                             │
+                             ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                    Conversational AI Layer                       │
+│                                                                   │
+│  ┌─────────────┐  ┌──────────────┐  ┌────────────────────┐    │
+│  │  LangChain  │──│ Memory Buffer│──│ Prompt Templates   │    │
+│  │  Chain      │  │              │  │                    │    │
+│  └─────────────┘  └──────────────┘  └────────────────────┘    │
+└────────────────────────────┬────────────────────────────────────┘
+                             │
+                             ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                    Multi-Agent Orchestration                     │
+│                                                                   │
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────────────┐    │
+│  │ Recipe Chef │  │ Nutritionist│  │ Shopping Assistant  │    │
+│  │   Agent     │  │   Agent     │  │     Agent           │    │
+│  └─────────────┘  └─────────────┘  └─────────────────────┘    │
+│         │                 │                    │                 │
+│         └─────────────────┴────────────────────┘                │
+│                           │                                       │
+│                    CrewAI Task Manager                           │
+└────────────────────────────┬────────────────────────────────────┘
+                             │
+                             ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                    LLM Inference Layer                           │
+│                                                                   │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────────┐     │
+│  │ Groq LLM API │  │ HuggingFace  │  │ OpenRouter API   │     │
+│  │ (Llama 3.3)  │  │ Transformers │  │                  │     │
+│  └──────────────┘  └──────────────┘  └──────────────────┘     │
+└────────────────────────────┬────────────────────────────────────┘
+                             │
+                             ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                    Data & Storage Layer                          │
+│                                                                   │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────────┐     │
+│  │  ChromaDB    │  │ Session State│  │ CSV Dataset      │     │
+│  │  (Vectors)   │  │ (In-Memory)  │  │ (231K Recipes)   │     │
+│  └──────────────┘  └──────────────┘  └──────────────────┘     │
+└─────────────────────────────────────────────────────────────────┘
 
 
 ---
 
-## 💡 Functional Modules (Pin-to-Pin Details)
+## 💡 Functional Modules 
 
 ### 1️⃣ **Chat & Conversation Engine**
+
 - Built using **LangChain ConversationalRetrievalChain** + **CrewAI Task Agents**
+
 - Memory is maintained via `ConversationBufferMemory`
-- Allows seamless switching between models (e.g. *Llama 3.3 70B*, *HuggingFace Transformers*)
+
+- Allows seamless switching between models (e.g. *Llama 3.3 70B*, *HuggingFace Transformers gpt2, mistral8x7B , DialoGPT, FLANT5)
+
 - Supports user personalization (`Beginner`, `Vegan`, etc.)
 
+
+
 ### 2️⃣ **Recipe Generator (Core AI Module)**
+
 - Uses Groq LLMs + LangChain prompt templates
+
 - Retrieves relevant recipes using Chroma Vector Store
+
 - Suggests meal prep steps, nutrition breakdown, and kitchen tools
+
 - Integrates with voice synthesis for audible reading of steps
 
+
 ### 3️⃣ **Shopping Cart & Payments**
+
 - Add items from recipe recommendations
+
 - Handles checkout through:
+
   - Credit/Debit cards
+
   - Wallet
+
   - Gift cards
-  - Third-party payment methods (PhonePe, PayPal)
+
+  - Third-party payment methods (PhonePe, GooglePay.Paytm, PayPal)
+
 - Real-time balance updates and transaction tracking
 
+
 ### 4️⃣ **Wallet & Gift Card System**
+
 - Session-based wallet ledger with transaction records
+
 - Refill/top-up feature using secure form-based UI
+
 - Gift card balance and redemption support
 
+
+
 ### 5️⃣ **Order Management System**
+
 - Auto-generated sample delivered orders for testing
+
 - Tracks:
+
   - Order placement
+
   - Payment
+
   - Delivery
+
   - Return/replacement requests
+
 - Each order includes timeline tracking (visual step completion)
 
 ### 6️⃣ **Return & Replacement Module**
+
 - Allows user to initiate:
+
   - Return request (for refund)
+
   - Replacement request (for damaged products)
+
 - Tracks each request with unique ID counters (`ORD`, `RET`, `REP`)
+
 - Simulated API response generation for status updates
 
+
 ### 7️⃣ **Voice Interaction**
+
 - Text-to-speech response rendering
+
 - Works dynamically with Streamlit session output
+
 - Toggle to enable/disable via settings
 
+
 ### 8️⃣ **Analytics Dashboard**
+
 - Tracks total chats, favorite recipes, total orders, and achievements
+
 - Includes gamified milestones like:
+
   - 🏆 “First Chat”
+
   - 📚 “Knowledge Seeker”
+
   - 🍲 “Master Chef”
+
 - Uses pandas DataFrame for metric computation
 
+
 ### 9️⃣ **UI & Aesthetic Design**
+
 - Built in **Streamlit** with extensive **custom CSS animations**
+
 - Components:
+
   - Gradient headers, animated chat bubbles, hover transitions
+
   - Recipe cards, progress bars, and status trackers
+
 - Fully responsive and interactive
 
+
 ### 🔟 **Security & API Key Handling**
+
 - Environment variables securely load:
+
   - `GROQ_API_KEY`
+
   - `HUGGINGFACEHUB_API_TOKEN`
+
   - `OPENROUTER_API_KEY`
+
 - These APIs are used for inference through respective LLM backends
 
 ---
 
+
+
 ## 🧠 LLM Models & Frameworks Used
 
 | Category | Library / Model |
+
 |-----------|-----------------|
+
 | **LLM Orchestration** | LangChain |
+
 | **CrewAI Multi-Agent Task Manager** | CrewAI |
+
 | **Embedding Models** | SentenceTransformer, HuggingFace |
+
 | **Vector Database** | ChromaDB |
+
 | **LLM Providers** | Groq, OpenRouter, HuggingFaceHub |
+
 | **Primary Model** | Llama 3.3 70B |
+
 | **Conversation Memory** | LangChain Buffer Memory |
 
 ---
 
+
 ## ⚙️ Installation & Setup Guide
 
 ### 1️⃣ Clone Repository
+
 ```bash
 git clone https://github.com/yourusername/ai-recipe-assistant.git
 cd ai-recipe-assistant
@@ -244,6 +366,7 @@ export HUGGINGFACEHUB_API_TOKEN=your_huggingface_api_token
 export OPENROUTER_API_KEY=your_openrouter_api_key
 ```
 
+
 ### 5️⃣ Launch Streamlit App
 
 ```bash
@@ -251,6 +374,7 @@ streamlit run alternative_update_streamlit16.py
 ```
 
 ---
+
 
 ## 🧱 Directory Structure
 
@@ -266,6 +390,8 @@ AI-Recipe-Assistant/
 
 ---
 
+
+
 ## 📊 Features Summary
 
 | Feature               | Description                                           |
@@ -275,35 +401,45 @@ AI-Recipe-Assistant/
 | Shopping Cart         | Full e-commerce workflow                              |
 | Order Tracking        | Live status and progress visualization                |
 | Wallet System         | Realtime balance updates, gift cards, transactions    |
-| Voice Output          | Text-to-speech response                               |
+| Voice Output(coming soon)          | Text-to-speech response                               |
 | Model Switcher        | User can choose different AI models dynamically       |
 | Analytics             | Session stats, achievements, and user behavior data   |
 | Adaptive UI           | Context-sensitive, animated, and user-friendly        |
 
 ---
 
+
 ## 🧩 Model Selection Panel
 
 Users can choose from:
 
 * 🧠 **Llama 3.3 70B (Groq)** – Best general conversational model
-* 🤗 **HuggingFace Transformers** – Open-source reasoning models
-* 🧩 **OpenRouter LLMs** – Custom API integration for scalability
+* 🤗 **GPT2,Mixtral8X7B (HuggingFace Transformers)** – Open-source reasoning models
+* 🧩 **Dialo GPT, FLAN-t5 (OpenRouter LLMs)** – Custom API integration for scalability
 
 This flexibility enables experimentation with multiple LLM backends in one interface.
 
 ---
 
+
 ## 🧭 Workflow (Step-by-Step Logic Flow)
 
 1️⃣ User interacts via chat →
-2️⃣ Input routed to selected LLM (Groq/HuggingFace) →
+
+2️⃣ Input routed to selected LLM (Groq/HuggingFace,OpenRouter) →
+
 3️⃣ LangChain handles conversational context →
+
 4️⃣ CrewAI agent allocates tasks (recipe creation, shopping, etc.) →
+
 5️⃣ Vector retrieval from ChromaDB →
+
 6️⃣ Response generation + formatting →
+
 7️⃣ Streamlit UI displays formatted AI response →
+
 8️⃣ User can act (add to cart, return item, etc.) →
+
 9️⃣ Session state persists all actions (wallet, orders, chat)
 
 ---
@@ -336,28 +472,27 @@ This flexibility enables experimentation with multiple LLM backends in one inter
 ## 👨‍💻 Developer Information
 
 **Name:** Gouthum Kharvi
-**Role:** Data Analyst | AI Developer
+**Role:** GENAI Developer
 **Location:** Udupi, Karnataka, India
-**Specialization:** Machine Learning, NLP, GenAI Systems, MLOps
-**Email:** [your.email@example.com](mailto:your.email@example.com)
+**Specialization:** Machine Learning, Deep Learning , NLP, GenAI< AgenticAI Systems, MLOps
+**Email:** [gouthumkharvi1899@gmail.com](gouthumkharvi1899@gmail.com)
 
 ---
 
-## 🪪 License
 
-This project is licensed under the **MIT License**.
-You are free to use, modify, and distribute it for educational and personal projects.
-
----
 
 ## 🧭 Summary Statement
 
-> “AI Recipe Assistant” is more than a chatbot — it’s a **self-adapting Generative AI ecosystem** that integrates conversational reasoning, recommendation, and e-commerce intelligence into one seamless interface.
-> Powered by **LangChain**, **CrewAI**, and **Groq LLMs**, it represents the future of *context-aware, personalized, and autonomous digital assistants*.
+> “AI Recipe Assistant” is more than a chatbot — it’s a **self-adapting Generative AI and Agentic AI ecosystem** that integrates conversational reasoning, recommendation, and e-commerce intelligence into one seamless interface.
+
+> Powered by **LangChain**, **RAG**, **CrewAI**, and **Groq LLMs**, it represents the future of *context-aware, personalized, and autonomous digital assistants*.
 
 ````
 
+
+
 ---
+
 
 ## ⚙️ **requirements.txt**
 
