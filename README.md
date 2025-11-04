@@ -44,10 +44,6 @@ This project is an advanced implementation of **Conversational AI + E-commerce I
 
 ## 🧠 About the Project
 
-### 🔮 What is a "Agentic AI Chatbot"?
-This chatbot is termed **Magnetic** because it dynamically attracts contextual data (recipes, orders, transactions, preferences) around user intent using **LangChain’s retrieval chain** and **CrewAI’s adaptive task-based agents**.  
-It "magnetically" adapts its conversation and UI behavior based on user interaction history, making it a **self-learning, GenAI-powered cooking assistant**.
-
 ### 🔮 What is an Agentic AI Chatbot?
 
 An **Agentic AI**  Chatbot is a system built using autonomous AI agents that can reason, retrieve, and act based on user intent.
@@ -78,9 +74,7 @@ Unlike static chatbots, this Agentic GenAI system adapts to user behavior, learn
 
 ## 🏗️ System Architecture
 
-```
 
-```
            ┌──────────────────────────┐
            │        User Input        │
            └─────────────┬────────────┘
@@ -103,9 +97,7 @@ Unlike static chatbots, this Agentic GenAI system adapts to user behavior, learn
        │ Chatbot UI | Recipe Gen | Orders |   │
        │ Wallet | Shopping | Analytics | Voice│
        └──────────────────────────────────────┘
-```
 
-````
 
 ---
 
