@@ -2,7 +2,7 @@
 
 A RAG-powered multi-agent Generative AI recipe assistant built with CrewAI, LangChain, and Groq LLMs.
 
-It delivers contextual chat, adaptive recipe generation, smart shopping, order tracking, and voice interaction(coming soon) — a complete Agentic AI ecosystem using Streamlit.
+It delivers contextual chat, adaptive recipe generation, smart shopping, order tracking, and voice interaction(coming soon) — a complete Agentic AI ecosystem using Streamlit. 
 
 
 Complete web app :- https://cookingrecipiesgenai.streamlit.app/
